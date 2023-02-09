@@ -2,7 +2,7 @@ import MealsContext from "./MealsContext"
 import { useReducer } from "react" 
 const defaultReducer ={
     item: [],
-    totalAmount: 0
+    totalAmount:0,
 }
 const MealsReducer = (state,action) =>{
     if(action.type==='Add_item'){

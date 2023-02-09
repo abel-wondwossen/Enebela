@@ -13,7 +13,7 @@ function Tabview(props) {
     return (
   <div className='tabs'>
 <Tabs variant='soft-rounded' colorScheme='green'>
-  <TabList>
+  <TabList >
     <Tab>ሁሉም ምግቦች</Tab>
     <Tab>የጾም</Tab>
     <Tab>የፍስግ</Tab>
