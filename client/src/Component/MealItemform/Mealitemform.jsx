@@ -5,14 +5,15 @@ import { FormControl,NumberInput,
     NumberInputField,NumberInputStepper,
     NumberIncrementStepper,NumberDecrementStepper,
      Button } from '@chakra-ui/react';
-import ContactModal from '../Layouts/Modal/ContactModal';
+// import ContactModal from '../Layouts/Modal/ContactModal';
 function Mealitemform(props) {
     const [validAmount,setValidAmount] = useState(true);
     const enteredAmountRef =useRef();
     const submitHandler = (event) =>{
+      event.preventDefault();
+
         const enteredAmount =enteredAmountRef.current.value;
         const enteredAmountNUmber =+enteredAmount;
-        event.preventDefault();
         if(enteredAmount.trim().length===0||enteredAmount<1||enteredAmount>5){
             setValidAmount(false)
             return;     
@@ -35,7 +36,7 @@ function Mealitemform(props) {
 </div>
 <div>
 <Button colorScheme='teal'type='submit'>+add</Button>
-<ContactModal />
+{/* <ContactModal /> */}
 </div>
 {!validAmount&&<p className='invalid-text'>please enter valid amount</p>}
 </form>

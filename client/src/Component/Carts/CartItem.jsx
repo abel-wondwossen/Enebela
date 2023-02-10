@@ -5,35 +5,27 @@ import React from 'react';
 
 function CartItem(props) {
 const mealsCtx = useContext(MealsContext);
-const totalAmount = mealsCtx.totalamount;
+const totalAmount =`$${mealsCtx.totalamount.toFixed(2)}`;
 
+console.log('hello')
     return (
         <div>
-             <div>
-                <Card>
+           <Card>
   <CardHeader>
+    <Heading size='md'>Client Report</Heading>
   </CardHeader>
-            <CardBody>
-            <Stack divider={<StackDivider />} spacing='10'>
-        <Box>
-        <Heading size='xs' textTransform='uppercase'>
-            <Text>{totalAmount}</Text>
-        </Heading>
 
-        <Text pt='2' fontSize='sm'>
-                View a summary of all your clients over the last month.
-        </Text>
-        <Button onClick={props.onRemove}>-</Button>
-            <Button onClick={props.onAdd}>+</Button>
- 
-        </Box> 
+  <CardBody>
+    <Stack divider={<StackDivider />} spacing='4'>
+     
+        {mealsCtx.items.map((item) => <Box> <Heading size='xs' textTransform='uppercase'>{(item.name)}
+        </Heading></Box>)}
+        
+     
       
-      </Stack>
-      
-      </CardBody>       
-      </Card>  
-        </div>
-          
+    </Stack>
+  </CardBody>
+</Card>
         </div>
     );
 }
