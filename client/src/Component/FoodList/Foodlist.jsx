@@ -1,4 +1,5 @@
 import React from 'react';
+import './Foodlist.css'
 import { useContext } from 'react';
 import MealsContext from '../../Contexts/MealsContext';
 import { Card, CardHeader, CardBody, Text,Heading,Box,Stack,StackDivider } from '@chakra-ui/react'
@@ -23,13 +24,11 @@ function Foodlist(props) {
             <Stack divider={<StackDivider />} spacing='10'>
         <Box>
         <Heading size='xs' textTransform='uppercase'>
-            {props.name}
-            <Text>{price}</Text>
+        <div className="name">
+         <div>{props.name} </div>
+   <Text>{price}</Text></div>
         </Heading>
 
-        <Text pt='2' fontSize='sm'>
-                View a summary of all your clients over the last month.
-        </Text> 
     <Mealitemform id ={props.id} onAddtocart={addToCartHandler} />   
         </Box> 
       </Stack>

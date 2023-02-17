@@ -14,7 +14,7 @@ function ContactModal(props) {
             const { isOpen, onOpen, onClose } = useDisclosure()
         return (
           <>
-            <Button onClick={onOpen}>Open Modal</Button>
+            <Button colorScheme='teal'onClick={onOpen}>Order</Button>
       
             <Modal isOpen={isOpen} onClose={onClose}>
               <ModalOverlay />

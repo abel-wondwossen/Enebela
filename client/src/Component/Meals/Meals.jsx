@@ -6,13 +6,13 @@ function Meals(props) {
         id:1,
         name:'shiro',
         type:'fa',
-        price:150,
+        price:70,
     },
     {
         id:2,
         name:'Pasta',
         type:'fa',
-        price:100,
+        price:10,
     },
     {
         id:3,

@@ -1,0 +1,6 @@
+.totalamount{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-weight: bolder;
+}
