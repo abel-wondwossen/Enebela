@@ -16,21 +16,21 @@ function Foodlist(props) {
         })
     }
     return (
-        <div>
+        <div className='card-food'>
                 <Card>
   <CardHeader>
   </CardHeader>
             <CardBody>
-            <Stack divider={<StackDivider />} spacing='10'>
+            <Stack divider={<StackDivider />} spacing='2'>
         <Box>
-        <Heading size='xs' textTransform='uppercase'>
         <div className="name">
+        <Heading size='xs' textTransform='uppercase'>
          <div>{props.name} </div>
-   <Text>{price}</Text></div>
+   <Text>{price}</Text>
         </Heading>
 
     <Mealitemform id ={props.id} onAddtocart={addToCartHandler} />   
-        </Box> 
+    </div></Box> 
       </Stack>
       </CardBody>       
       </Card>  

@@ -5,13 +5,24 @@ const defaultReducer ={
     totalamount: 0,
 }
 const MealsReducer = (state,action) =>{
+    console.log(action.item)
     if(action.type==='Add_item'){
-        const updatedItems = state.item.concat(action.item)
-        
-        const updatedTotalAmount=state.totalamount+action.item.price*action.item.amount;
+         const updatedItems = state.item.concat(action.item)
+//         const existingCartIndex = state.item.findIndex((item)=>item.id===action.id);
+//         const existingCart = state.item[existingCartIndex];
+//         let updatedItems;
+//         if(existingCartIndex){
+//     const updatedItem = { ...existingCart,
+//    amount : existingCart.amount + action.amount}
+//         updatedItems =[...state.items]
+//         updatedItems[existingCart] = updatedItem;
+//     }else{
+//         updatedItems=state.item.concat(action.item)
+//     }
+    const updatedTotalAmount=state.totalamount+action.item.price*action.item.amount;
         return{
-            item:updatedItems,
-            totalamount:updatedTotalAmount,
+            item : updatedItems,
+            totalamount : updatedTotalAmount,
         }
     }
     // return defaultReducer

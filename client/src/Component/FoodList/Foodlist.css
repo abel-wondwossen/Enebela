@@ -1,4 +1,9 @@
 .name{
     display:flex;
     flex-direction: row;
+    justify-content: space-between;
+}
+.card-food{
+    margin-left: 5%;
+    /* width: 50%; */
 }

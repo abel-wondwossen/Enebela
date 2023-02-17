@@ -8,7 +8,7 @@ import ContactModal from '../Layouts/Modal/ContactModal';
 function CartItem(props) {
 const mealsCtx = useContext(MealsContext);
 const totalAmount =`$${mealsCtx.totalamount.toFixed(2)}`;
-
+const hasItem = mealsCtx.items.length>0;
     return (
         <div>
            <Card>
@@ -23,7 +23,7 @@ const totalAmount =`$${mealsCtx.totalamount.toFixed(2)}`;
     </Stack>
   </CardBody>
 </Card>
-<ContactModal />
+{hasItem && <ContactModal />}
         </div>
     );
 }
