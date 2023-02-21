@@ -4,8 +4,7 @@ const MealsContext=React.createContext ({
     items:[],
     totalamount:0,
     addItem: (item) => {},
-    removeItem: (id) => {}
-
+    removeItem: (id) => {},
 })
 
 export default MealsContext;
