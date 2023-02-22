@@ -4,7 +4,7 @@ import './Cartitems.css'
 import {Text,Stack} from '@chakra-ui/react'
 import React from 'react';
 import ContactModal from '../Layouts/Modal/ContactModal';
-import CartShower from './CartShower';
+import CartShower from './Cartsshower/CartShower'
 
 function CartItem(props) {
 const mealsCtx = useContext(MealsContext);

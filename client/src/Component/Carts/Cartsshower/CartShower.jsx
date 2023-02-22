@@ -1,20 +1,25 @@
 import React from 'react';
-import { Card, CardBody,Heading} from '@chakra-ui/react'
+import './CartShower.css'
+import { Button, Card, CardBody,Heading} from '@chakra-ui/react'
 function CartShower(props) {
+     const price= `$${props.price.toFixed(2)}`
     return (
-        <div key={props.id}>
+        <div cal key={props.id}>
  <Card>
-  <CardBody>
+  <CardBody className='carts'>
     <Heading size='xs' textTransform='uppercase'>
           {props.name}
-     </Heading>  
+     </Heading>
      <Heading size='xs' textTransform='uppercase'>
-          {props.price}
+          {price}
      </Heading>  
      <Heading size='xs' textTransform='uppercase'>
           {props.amount}
-     </Heading>  
-      
+     </Heading> 
+     <div>
+      <Button colorScheme='teal'>+</Button>
+      <Button colorScheme='facebook'>-</Button>
+      </div> 
   </CardBody>
 </Card>
             

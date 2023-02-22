@@ -26,13 +26,13 @@ function Tabview(props) {
   </TabList>
   <TabPanels>
     <TabPanel>
-      <Meals />
+      <Meals tab='All'/>
     </TabPanel>
     <TabPanel>
-    <Meals />
+    <Meals tab='fa' />
     </TabPanel>
     <TabPanel>
-    <Meals />
+    <Meals tab='Ta' />
     </TabPanel>
     <TabPanel>
       <CartItem />

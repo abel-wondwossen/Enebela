@@ -5,13 +5,13 @@ function Meals(props) {
     {
         id:1,
         name:'shiro',
-        type:'fa',
+        type:'Ta',
         price:70,
     },
     {
         id:2,
         name:'Pasta',
-        type:'fa',
+        type:'Ta',
         price:10,
     },
     {
@@ -29,19 +29,22 @@ function Meals(props) {
     {
         id:5,
         name:'nodules',
-        type:'fa',
+        type:'Ta',
         price:170,
     },
  ]
-   const foodcart = food.map((fo)=><Foodlist
-   key={fo.id}
-   id={fo.id}
-   name={fo.name}
-   price={fo.price}
-   />)
+   const foodcart = food.map((fo)=>
+   <Foodlist key ={fo.id} id={fo.id} name={fo.name}price={fo.price}/>)
+   const foodTa = food.map((fo)=>
+    fo.type==='Ta'&&<Foodlist key ={fo.id} id={fo.id} name={fo.name}price={fo.price}/>)
+    const foodFa = food.map((fo)=>
+   fo.type==='fa'&&<Foodlist key ={fo.id} id={fo.id} name={fo.name}price={fo.price}/>)
     return (
         <div>
-          {foodcart}
+            {props.tab==='All'&&foodcart}
+            {props.tab==='Ta'&&foodTa}
+            {props.tab==='fa'&&foodFa}
+
         </div>
     );
 }
