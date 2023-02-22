@@ -17,8 +17,8 @@ function CartShower(props) {
           {props.amount}
      </Heading> 
      <div>
-      <Button colorScheme='teal'>+</Button>
-      <Button colorScheme='facebook'>-</Button>
+      <Button onClick={props.onAdd} colorScheme='teal'>+</Button>
+      <Button onClick={props.onRemove} colorScheme='facebook'>-</Button>
       </div> 
   </CardBody>
 </Card>

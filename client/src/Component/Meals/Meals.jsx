@@ -44,7 +44,6 @@ function Meals(props) {
             {props.tab==='All'&&foodcart}
             {props.tab==='Ta'&&foodTa}
             {props.tab==='fa'&&foodFa}
-
         </div>
     );
 }
