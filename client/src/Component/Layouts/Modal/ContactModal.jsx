@@ -1,5 +1,6 @@
 import React from 'react';
 import { useDisclosure } from '@chakra-ui/react';
+import {FormControl,FormLabel,Input} from '@chakra-ui/react'
 import {Button,
     Modal,
     ModalOverlay,
@@ -19,17 +20,24 @@ function ContactModal(props) {
             <Modal isOpen={isOpen} onClose={onClose}>
               <ModalOverlay />
               <ModalContent>
-                <ModalHeader>Modal Title</ModalHeader>
+                <ModalHeader>Fill user info</ModalHeader>
                 <ModalCloseButton />
                 <ModalBody>
-                </ModalBody>
-      
+                <FormControl>
+  <FormLabel>Name</FormLabel><Input type='text' />
+  <FormLabel>Email</FormLabel><Input type='email' />
+  <FormLabel>Phone</FormLabel><Input type='tel' />
+  <FormLabel>Address</FormLabel><Input type='address' />
+
                 <ModalFooter>
                   <Button colorScheme='blue' mr={3} onClick={onClose}>
-                    Close
+                    Cancel
                   </Button>
-                  <Button variant='ghost'>Secondary Action</Button>
+                  <Button type='submit' variant='ghost'>Submit</Button>
                 </ModalFooter>
+</FormControl>
+</ModalBody>
+
               </ModalContent>
             </Modal></>
     );

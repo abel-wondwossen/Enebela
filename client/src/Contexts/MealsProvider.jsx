@@ -28,7 +28,29 @@ const MealsReducer = (state,action) =>{
             totalamount : updatedTotalAmount,
         }
     }
-    // return defaultReducer
+    if(action.type === 'remove_item')
+    {
+      const existingCartItemIndex = state.item.findIndex(
+        (item) => item.id === action.id
+      );
+      const existingCartItem =state.item[existingCartItemIndex]
+      const updatedTotalAmount = state.totalamount-existingCartItem.price;
+      let updatedItems;
+        if(existingCartItem.amount===1){
+          updatedItems = state.item.filter((item)=>item.id!==action.id)
+        }
+        else{
+          const updatedItem ={...existingCartItem,amount:existingCartItem.amount-1}
+          updatedItems=[...state.item];
+          updatedItems[existingCartItemIndex]=updatedItem;
+        }
+        return{
+          item:updatedItems,
+          totalamount:updatedTotalAmount  
+        }
+    }
+
+     return defaultReducer
 }
 const MealsProvider = props=>{
 const[mealsState,dispatchMealsAction ]=useReducer(MealsReducer,defaultReducer)
